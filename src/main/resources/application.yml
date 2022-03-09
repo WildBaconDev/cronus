@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: panteaoCronusDB
+      host: localhost
+      port: 27017
