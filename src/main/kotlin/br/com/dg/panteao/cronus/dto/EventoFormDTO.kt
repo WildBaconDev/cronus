@@ -1,6 +1,8 @@
 package br.com.dg.panteao.cronus.dto
 
+import br.com.dg.panteao.cronus.model.Categoria
 import br.com.dg.panteao.cronus.model.Evento
+import br.com.dg.panteao.cronus.model.Status
 import java.time.LocalDateTime
 
 data class EventoFormDTO(
@@ -17,7 +19,9 @@ data class EventoFormDTO(
             id = eventoFormDTO.id,
             titulo = eventoFormDTO.titulo,
             descricao = eventoFormDTO.descricao,
-            dataFinalizacao = eventoFormDTO.dataFinalizacao
+            dataFinalizacao = eventoFormDTO.dataFinalizacao,
+            categoria = eventoFormDTO.categoria?.map { Categoria(it, "") },
+            status = Status(eventoFormDTO.status, "")
         )
     }
 }

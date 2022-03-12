@@ -19,10 +19,10 @@ data class EventoApresentacaoDTO(
             id = evento.id,
             titulo = evento.titulo,
             descricao = evento.descricao,
-//            categoria = evento.categoria?.map { it.id!! },
+            categoria = evento.categoria,
             dataInicio = evento.dataInicio,
             dataFinalizacao = evento.dataFinalizacao,
-//            status = evento.status?.id
+            status = evento.status
         )
     }
 }
