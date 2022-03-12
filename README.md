@@ -9,8 +9,8 @@ Aplicação de tracking de tempo gasto
 - [x] Analisar código
 - [X] Atualizar Evento
 - [X] Validar remover evento
-- [ ] Atualizar e remover categoria
-- [ ] Atualizar e remover status
+- [X] Atualizar e remover categoria
+- [X] Atualizar e remover status
 - [ ] Testes unitários
 - [ ] Bean Validation
 - [ ] Mover o `object companion mapper` de dentro do DTO e transformar em um `Converter`

@@ -4,11 +4,7 @@ import br.com.dg.panteao.cronus.model.Status
 import br.com.dg.panteao.cronus.service.StatusService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("status")
@@ -17,8 +13,14 @@ class StatusController(
 ) {
 
     @GetMapping
-    fun consultarStatus() = ResponseEntity.ok(statusService.consultarStatus())
+    fun consultar() = ResponseEntity.ok(statusService.consultarStatus())
 
     @PostMapping
-    fun salvarStatus(@RequestBody status: Status) = ResponseEntity(statusService.salvar(status), HttpStatus.CREATED)
+    fun salvar(@RequestBody status: Status) = ResponseEntity(statusService.salvar(status), HttpStatus.CREATED)
+
+    @PutMapping
+    fun atualizar(@RequestBody status: Status) = ResponseEntity(statusService.salvar(status), HttpStatus.CREATED)
+
+    @DeleteMapping("/{id}")
+    fun deletar(@PathVariable("id") id: String) = ResponseEntity(statusService.remover(id), HttpStatus.NO_CONTENT)
 }

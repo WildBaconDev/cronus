@@ -11,5 +11,6 @@ class StatusService(
     fun consultarStatus() = statusRepository.findAll()
     fun salvar(status: Status) = statusRepository.save(status)
     fun findById(id: String) = statusRepository.findById(id)
+    fun remover(id: String) = statusRepository.deleteById(id)
 
 }
