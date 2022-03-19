@@ -12,9 +12,8 @@ Aplicação de tracking de tempo gasto
 - [X] Atualizar e remover categoria
 - [X] Atualizar e remover status
 - [X] Adicionar Logs
-- [ ] Adicionar `advice`
+- [X] Adicionar `advice`
 - [ ] Testes unitários
-- [ ] Bean Validation
-- [ ] Mover o `object companion mapper` de dentro do DTO e transformar em um `Converter`
+- [X] Bean Validation
 - [ ] Adicionar `Spring Security` e gerar token
 - [ ] Adicionar `Spring Actuator`

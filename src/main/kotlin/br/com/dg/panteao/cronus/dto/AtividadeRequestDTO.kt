@@ -8,18 +8,11 @@ import java.time.LocalDateTime
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 
-data class AtividadeRequestDTO (
+data class AtividadeRequestDTO(
     var id: String? = null,
-    @NotBlank
-    val eventoId: String,
-    @NotBlank
-    val titulo: String,
-    @NotNull
-    @JsonProperty("data_inicio")
-    val dataInicio: LocalDateTime,
-    @JsonProperty("data_fim")
-    var dataFim: LocalDateTime? = null,
-    @NotNull
-    @JsonDeserialize(converter = StringToStatusAtividadeConverter::class)
-    val status: StatusAtividade,
+    @field:NotBlank @JsonProperty(required = true) var eventoId: String = "",
+    @field:NotBlank var titulo: String = "",
+    @JsonProperty("data_inicio") var dataInicio: LocalDateTime = LocalDateTime.now(),
+    @JsonProperty("data_fim") var dataFim: LocalDateTime? = null,
+    @field:NotNull @JsonDeserialize(converter = StringToStatusAtividadeConverter::class) var status: StatusAtividade,
 )

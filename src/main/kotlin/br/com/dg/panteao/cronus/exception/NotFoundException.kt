@@ -1,5 +1,3 @@
 package br.com.dg.panteao.cronus.exception
 
-class NotFoundException : RuntimeException() {
-
-}
+class NotFoundException : RuntimeException()

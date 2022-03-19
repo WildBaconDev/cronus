@@ -1,13 +1,18 @@
 package br.com.dg.panteao.cronus.converter
 
-import br.com.dg.panteao.cronus.exception.InvalidStatus
+import br.com.dg.panteao.cronus.exception.InvalidAtividadeStatusException
 import br.com.dg.panteao.cronus.model.StatusAtividade
 import com.fasterxml.jackson.databind.util.StdConverter
 
-class StringToStatusAtividadeConverter: StdConverter<String, StatusAtividade>() {
+class StringToStatusAtividadeConverter : StdConverter<String, StatusAtividade>() {
     override fun convert(value: String?): StatusAtividade {
-        val statusString = value.takeIf { v -> v !== null } ?: throw InvalidStatus()
+        try {
+            val statusString = value.takeIf { v -> v !== null && v.isNotBlank() }
+                ?: throw IllegalArgumentException()
 
-        return StatusAtividade.valueOf(statusString)
+            return StatusAtividade.valueOf(statusString)
+        } catch(e: IllegalArgumentException) {
+            throw InvalidAtividadeStatusException("Status inválido")
+        }
     }
 }

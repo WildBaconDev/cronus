@@ -71,7 +71,7 @@ class EventoService(
         logger.info("atividade_id={};", atividadeId)
 
         val evento = eventoRepository.findByAtividadesId(atividadeId) ?: throw NotFoundException()
-        evento.atividades = evento.atividades!!.filter { atividade -> atividade.id == atividadeId }.toMutableList()
+        evento.atividades = evento.atividades!!.filter { atividade -> atividade.id != atividadeId }.toMutableList()
         save(evento)
     }
 
