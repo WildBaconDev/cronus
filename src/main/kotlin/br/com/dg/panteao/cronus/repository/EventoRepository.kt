@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface EventoRepository: MongoRepository<Evento, String> {
 
+    fun findByAtividadesId(atividadeId: String): Evento?
+
 }

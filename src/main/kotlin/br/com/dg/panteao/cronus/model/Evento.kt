@@ -16,4 +16,5 @@ data class Evento(
     var dataFinalizacao: LocalDateTime? = null,
     @DocumentReference
     var status: Status? = null,
+    var atividades: MutableList<Atividade>? = null,
 )
