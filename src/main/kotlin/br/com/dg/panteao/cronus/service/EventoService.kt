@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service
 class EventoService(
     val eventoRepository: EventoRepository,
 ) {
-    val logger = LoggerFactory.getLogger(EventoService::class.java)
+    val logger = LoggerFactory.getLogger(this::class.java)
 
     fun salvar(evento: EventoRequestDTO): EventoResponseDTO {
         logger.info("id={}; titulo={};", evento.id, evento.titulo)

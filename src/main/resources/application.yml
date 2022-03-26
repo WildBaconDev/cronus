@@ -8,11 +8,5 @@ spring:
       host: localhost
       port: 27017
 
-#logging:
-#  level:
-#    org:
-#      springframework:
-#        data:
-#          mongodb:
-#            core:
-#              MongoTemplate: DEBUG
+jwt:
+  secret: PMdI41v2v}O[n%/NT{{DDo[7c"ZK(d7Ys(CX=_~:Ib9catU!rr2nW.c#5?j3^qv

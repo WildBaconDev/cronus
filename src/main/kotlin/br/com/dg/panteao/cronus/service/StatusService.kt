@@ -10,7 +10,7 @@ import java.util.*
 class StatusService(
     val statusRepository: StatusRepository
 ) {
-    val logger = LoggerFactory.getLogger(StatusService::class.java)
+    val logger = LoggerFactory.getLogger(this::class.java)
 
     fun consultarStatus(): MutableList<Status> {
         logger.info("")

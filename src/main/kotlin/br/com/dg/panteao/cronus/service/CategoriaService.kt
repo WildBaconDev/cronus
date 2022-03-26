@@ -11,7 +11,7 @@ import java.util.*
 class CategoriaService(
     val categoriaRepository: CategoriaRepository
 ) {
-    val logger = LoggerFactory.getLogger(CategoriaService::class.java)
+    val logger = LoggerFactory.getLogger(this::class.java)
 
     fun salvar(categoria: Categoria): Categoria {
         logger.info("id={}, nome={}", categoria.id, categoria.nome)
