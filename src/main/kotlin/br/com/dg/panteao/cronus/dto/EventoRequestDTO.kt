@@ -8,16 +8,16 @@ import java.time.LocalDateTime
 import javax.validation.constraints.NotBlank
 
 data class EventoRequestDTO(
-    val id: String?,
+    val id: String? = null,
     @field:NotBlank
     val titulo: String,
-    val descricao: String?,
-    val categoria: List<String>?,
+    val descricao: String? = null,
+    val categoria: List<String>? = null,
     @JsonProperty("data_inicio")
-    val dataInicio: LocalDateTime?,
+    val dataInicio: LocalDateTime? = null,
     @JsonProperty("data_finalizacao")
-    val dataFinalizacao: LocalDateTime?,
-    val status: String?,
+    val dataFinalizacao: LocalDateTime? = null,
+    val status: String? = null,
 ) {
     companion object Mapper {
         fun to(eventoResponseDTO: EventoRequestDTO) = Evento(

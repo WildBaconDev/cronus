@@ -30,15 +30,19 @@ class UsuarioServiceTest {
             password = "12345",
         )
 
-        every { usuarioRepository.save(any()) } returns Usuario(
+        val usuario = Usuario(
             username = "username",
             email = "email",
             password = "12345",
         )
 
+        every { usuarioRepository.save(any()) } returns usuario
+
         val response = usuarioService.createUser(user)
 
         Assertions.assertNotNull(response)
+        Assertions.assertEquals(usuario.username, response.username)
+        Assertions.assertEquals(usuario.email, response.email)
     }
 
 }
