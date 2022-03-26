@@ -6,7 +6,7 @@ data class Atividade(
     var id: String,
     var titulo: String,
     var dataInicio: LocalDateTime,
-    var dataFim: LocalDateTime?,
+    var dataFim: LocalDateTime? = null,
     var status: StatusAtividade,
 )
 

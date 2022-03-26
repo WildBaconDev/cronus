@@ -33,7 +33,20 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+
+	/*
+	* junit 5
+	* https://spring.io/guides/tutorials/spring-boot-kotlin/
+	* */
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude(module = "junit")
+		exclude(module = "mockito-core")
+	}
+
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+	testImplementation("com.ninja-squad:springmockk:3.1.1")
 }
 
 tasks.withType<KotlinCompile> {
