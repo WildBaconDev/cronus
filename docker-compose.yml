@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+#  app:
+#    build:
+#      dockerfile: ./Dockerfile
+#      context: .
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - mongo
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=prod
+#      - JWT_SECRET=PMdI41v2v}O[n%/NT{{DDo[7c"ZK(d7Ys(CX=_~:Ib9catU!rr2nW.c#5?j3^qv
+#      - SPRING_DATA_MONGODB_DATABASE=cronusDB
+#      - SPRING_DATA_MONGODB_HOST=mongo
+#      - SPRING_DATA_MONGODB_PORT=27017
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: always

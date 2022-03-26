@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
 	kotlin("plugin.jpa") version "1.6.10"
+	jacoco
 }
 
 group = "br.com.dg.panteao"
@@ -55,6 +56,17 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "11"
 	}
+}
+//https://docs.gradle.org/current/userguide/jacoco_plugin.html#header
+jacoco {
+	toolVersion = "0.8.7"
+}
+
+tasks.test {
+	finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+	dependsOn(tasks.test) // tests are required to run before generating the report
 }
 
 tasks.withType<Test> {

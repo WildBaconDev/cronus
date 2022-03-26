@@ -16,8 +16,8 @@ Aplicação de tracking de tempo gasto
 - [X] Bean Validation
 - [X] Adicionar `Spring Security` e gerar token
 - [X] Adicionar `Spring Actuator`
-- [ ] Testes unitários
-- [ ] Docker
-- [ ] Docker-compose com o mongodb
-- [ ] preparar pro Heroku
+- [X] Testes unitários
+- [X] Docker
+- [X] Docker-compose com o mongodb
+- [X] preparar pro Heroku
 

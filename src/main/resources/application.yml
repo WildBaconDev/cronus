@@ -1,10 +1,10 @@
 server:
-  port: 8081
+  port: ${port:8080}
 
 spring:
   data:
     mongodb:
-      database: panteaoCronusDB
+      database: cronusDB
       host: localhost
       port: 27017
 
