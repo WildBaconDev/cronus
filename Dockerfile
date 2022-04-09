@@ -8,7 +8,7 @@ RUN mkdir /app
 RUN /bin/bash -c 'echo ${MONGODB_URI}'
 COPY --from=build /home/gradle/src/build/libs/cronus-0.0.1-SNAPSHOT.jar /app/cronus.jar
 #ADD ./build/libs/cronus-0.0.1-SNAPSHOT.jar /app/cronus.jar
-ENTRYPOINT ["java", "-Dspring.profiles.active=prod","-jar","/app/cronus.jar"]
+ENTRYPOINT ["java", "$JAVA_OPTS", "-XX:+UseContainerSupport", "-Xmx500m", "-Xss512k", "-XX:+UseContainerSupport", "-Dspring.profiles.active=prod","-jar","/app/cronus.jar"]
 
 #FROM openjdk:11-jre-slim
 #VOLUME /tmp
