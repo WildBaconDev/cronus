@@ -1,12 +1,7 @@
 server:
   port: ${port:8080}
 
-spring:
-  data:
-    mongodb:
-      database: cronusDB
-      host: localhost
-      port: 27017
+spring.data.mongodb.uri: mongodb://localhost:27017/cronusDB
 
 jwt:
   secret: PMdI41v2v}O[n%/NT{{DDo[7c"ZK(d7Ys(CX=_~:Ib9catU!rr2nW.c#5?j3^qv
